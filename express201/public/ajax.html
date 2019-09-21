@@ -1,0 +1,27 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+<script>
+    const ourRequest = $.ajax({
+        method: "POST",
+        url: "http://localhost:3000/ajax",
+        dataType: "json",
+        data: {
+            name: "Rob"
+        }
+    })
+    ourRequest.then((response, statusCode, xmlhtpo) => {
+        // this response should be the  =  res.send("Test")
+        // which is the response from the post request in helmetAndOthers.js file
+        // the reason this doesent show up is this is a promise 
+        // and jquery will not consider our response a valid response
+        // so the promise never resolves so we cant even see the headers
+        // the data type we have now is content-type: text/html and our ajax promise
+        // will not accept or doesnt know what to do with text/html 
+        // it does not consider it to be a valid data type
+        // so in helmetAndOthers.js we switch from res.send to res.json and the mime-type will change from
+        // text/html to application.json which will be considered valid and allow the promise to resolve
+        console.log(response)
+        console.log(xmlhtpo)
+    })
+</script>
