@@ -9,8 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^2.7.1",
     "express": "^4.17.1",
+    "hbs": "^4.0.4",
     "helmet": "^3.21.1",
+    "pug": "^2.0.4",
     "t": "^0.5.1"
   }
 }

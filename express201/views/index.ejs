@@ -1,0 +1,43 @@
+<!-- 
+<% for(let i = 0; i < 10; i++){ %>
+    <li><%= i %></li>
+<% } %>
+
+<% for(let i = 0; i < 10; i++){ %>
+    <% if (i % 2 === 0){ txt = "even"%>
+    <% } else { txt = "odd"} %>
+    <li><%= i %> - <%= txt %></li>
+<% } %>
+-->
+
+<!-- the views files already has access to all the properties on the locals object
+so dont have to use locals.whatever -->
+<!-- 
+<h1><%= msg %></h1>
+<h2><%= msg2 %></h2>
+<h3><%= validated %></h3> 
+-->
+<!-- 
+this will literally be printed off as text the reason is that html is generally considered unsafe.
+if express and the templating engine doesnt know where this came from it could be that someone snuck
+in a script tag and it could be some kind of cross origin attack. 
+this is not escaped which means it will just print it exactly as it is it will not evaluate it
+if you have some html you want evaluated instead of using an equal sign you use a dash
+this will print it off and tell the browser to interpret it instead of just print it off
+<%= html %> 
+-->
+<!--
+ <%- html %> 
+-->
+
+<!-- if you want to put a comment in you can do <%# then the comment then %> and it will not show up on the DOM -->
+<!-- <%# this is purly an ejs comment %> -->
+<!-- this will show up on the DOM/console -->
+<!-- you can escape it essentially by putting an extra percent sign but why would anyone want to do this -->
+<!-- why would anyone want to write this <%% in an html file? -->
+
+<% include head %>
+<% include navbar %>
+
+<h1>Home Page!</h1>
+<%= msg %>

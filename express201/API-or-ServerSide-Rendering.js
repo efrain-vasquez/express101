@@ -74,5 +74,5 @@
 // res.json()
 // very fast
 // creates very cool UI/UX opportunities
-// but need to start storing stuff on the browser that you normally wouldn't want too
+// but need to start storing stuff on the browser that maybe you wouldn't normally want too
 

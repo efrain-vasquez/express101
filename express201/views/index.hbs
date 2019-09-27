@@ -1,0 +1,21 @@
+<h1>HBS Rendered file!</h1>
+
+Your message is: {{msg}} !!!!
+
+{{{html}}}
+
+{{!-- Country name: {{country.name}}
+Country capital: {{country.capital}} --}}
+
+
+{{!-- to make comments on handlebars you do it this way --}}
+<!-- this will appear on the DOM/console -->
+
+
+{{!-- prebuilt helpers: each, if, unless, etc.. --}}
+
+{{#each countries}}
+    {{#unless this.western}}
+    <li>{{this.name}} -- {{this.capital}}</li>
+    {{/unless}}
+{{/each}}
